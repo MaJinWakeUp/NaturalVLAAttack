@@ -1,0 +1,212 @@
+{
+  "name": "object_suite",
+  "suite": "libero_object",
+  "task_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "instruction": null,
+  "trials_per_task": 1,
+  "initial_state_offset": 22,
+  "patch": "patch.png",
+  "patch_sha256": "9b5be0654a414af3529cc0cd56098406d5d516dbccf62bccc04b982dba5f18d5",
+  "seed": "../../../seed_patches/cat_01_soft.png",
+  "seed_sha256": "1dd315458e1898bc7bfefe3108879ab4a24367caf0f46c4e8dcf40e9700e6c96",
+  "comparison": {
+    "paired_rollouts_per_condition": 10,
+    "conditions": {
+      "clean": {
+        "rollouts": 10,
+        "asr": 0.2,
+        "ap": 0.045592274582266445,
+        "per_rollout_ap": [
+          0.0,
+          0.021739130434782608,
+          0.008403361344537815,
+          0.3964285714285714,
+          0.0,
+          0.015267175572519083,
+          0.014084507042253521,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "seed": {
+        "rollouts": 10,
+        "asr": 0.0,
+        "ap": 0.0025240384615384617,
+        "per_rollout_ap": [
+          0.0,
+          0.0,
+          0.009615384615384616,
+          0.0,
+          0.015625,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "adversarial": {
+        "rollouts": 10,
+        "asr": 0.3,
+        "ap": 0.04012380952380952,
+        "per_rollout_ap": [
+          0.06428571428571428,
+          0.016,
+          0.02142857142857143,
+          0.29285714285714287,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.006666666666666667,
+          0.0
+        ]
+      }
+    },
+    "adversarial_failure_rate_minus_clean": 0.09999999999999998,
+    "adversarial_failure_rate_minus_seed": 0.3,
+    "conditional_on_clean_success": {
+      "reference_successes": 8,
+      "adversarial_failures": 1,
+      "rate": 0.125,
+      "failed_pairs": [
+        [
+          "libero_object",
+          0,
+          22
+        ]
+      ]
+    },
+    "conditional_on_both_baselines_succeeding": {
+      "reference_successes": 8,
+      "adversarial_failures": 1,
+      "rate": 0.125,
+      "failed_pairs": [
+        [
+          "libero_object",
+          0,
+          22
+        ]
+      ]
+    },
+    "target": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "tolerance": [
+      0.05
+    ],
+    "dimensions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "initial_observations_match": true,
+    "paired_successes": [
+      {
+        "suite": "libero_object",
+        "task_id": 0,
+        "trial": 22,
+        "clean": true,
+        "seed": true,
+        "adversarial": false
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 1,
+        "trial": 22,
+        "clean": true,
+        "seed": true,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 2,
+        "trial": 22,
+        "clean": true,
+        "seed": true,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 3,
+        "trial": 22,
+        "clean": false,
+        "seed": true,
+        "adversarial": false
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 4,
+        "trial": 22,
+        "clean": true,
+        "seed": true,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 5,
+        "trial": 22,
+        "clean": true,
+        "seed": true,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 6,
+        "trial": 22,
+        "clean": true,
+        "seed": true,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 7,
+        "trial": 22,
+        "clean": true,
+        "seed": true,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 8,
+        "trial": 22,
+        "clean": true,
+        "seed": true,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 9,
+        "trial": 22,
+        "clean": false,
+        "seed": true,
+        "adversarial": false
+      }
+    ]
+  },
+  "training_report": "report.json",
+  "initial_observation_matching": "Exact pre-action image SHA-256 agreement across all three conditions; first matching guarded rerun, independent of outcome.",
+  "training_scope": "all ten suite tasks"
+}

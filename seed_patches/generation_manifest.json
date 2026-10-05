@@ -1,0 +1,17 @@
+{
+  "file": "cat_01_soft.png",
+  "sha256": "1dd315458e1898bc7bfefe3108879ab4a24367caf0f46c4e8dcf40e9700e6c96",
+  "resolution": [
+    512,
+    512
+  ],
+  "method": "built-in image_gen.imagegen",
+  "model_identity": "The built-in tool did not expose its model/version. Stable Diffusion v1.5 remains the separate attack-training generator.",
+  "prepared_from": {
+    "subject": "a relaxed short-haired cream tabby cat sitting, full head and upper body visible, facing the camera",
+    "prompt": "Use case: lighting-weather and precise-object-edit.\nEdit target: the attached square animal photograph.\nPrimary request: Create a quieter photorealistic seed-patch variant of this same animal. Preserve its identity, pose, recognizable anatomy and realistic photograph style.\nComposition: reframe the animal substantially smaller, centered and occupying only about 35 percent of the image width and no more than 40 percent of its height, with large margins of simple warm beige around it. Use a completely smooth pale beige backdrop and smooth pale beige ground with no visible weave or grain.\nLighting: very soft diffuse daylight, high-key gentle photographic tones, subdued shadows, low local contrast, modest saturation. Fur/scales should have realistic but soft detail. No sharp dark outlines or dramatic shadows.\nThe image will be reduced to 50 by 50 pixels: prioritize one clear silhouette and smooth broad colors. It should look like a real photograph taken in gentle hazy light, with the animal recognizable, without speckled texture, strong background patterns, exaggerated sharpening or reflective sparkle.\nConstraints: one animal only, opaque square image, no added objects, no labels, no text, no border, no watermark, no accessories, no collage, no illustration or cartoon.",
+    "sha256": "a17ebb70b84f1bfb0b4dd3adced48bc423760b45f6bbc95db5308ac192033d22",
+    "variant": "soft framing/lighting edit"
+  },
+  "preparation": "RGB conversion and bicubic resize to 512x512; exact bytes used in the reported experiments"
+}

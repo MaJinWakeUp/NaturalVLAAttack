@@ -1,0 +1,102 @@
+{
+  "manifest": "${DURA_SCRATCH}/runs/libero_relaxed/manifests/spatial_task_00/train.jsonl",
+  "validation_manifest": "${DURA_SCRATCH}/runs/libero_relaxed/manifests/spatial_task_00/val.jsonl",
+  "validation_frames": 16,
+  "validate_actions": true,
+  "checkpoint_every": 10,
+  "final_output": ".",
+  "seed_patch": "../../../seed_patches/cat_01_soft.png",
+  "output": "${DURA_SCRATCH}/runs/libero_relaxed/spatial_task_00/training",
+  "image_size": 224,
+  "seed_size": 512,
+  "batch_size": 4,
+  "policy_batch_size": 1,
+  "patch_box": [
+    0,
+    174,
+    50,
+    50
+  ],
+  "attack": {
+    "mode": "whitebox",
+    "ddim_steps": 200,
+    "strength": 0.5,
+    "anchor_weight": 0.2,
+    "step_size": 1.0,
+    "samples": 2048,
+    "candidate_batch_size": 1,
+    "baseline": "none",
+    "query_alpha": "step",
+    "candidate_denoise": false,
+    "seed": 0
+  },
+  "diffusion": {
+    "checkpoint": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+    "cache_dir": "${HF_HOME}/hub",
+    "revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+    "device": "cuda:0",
+    "dtype": "float32",
+    "prompt": "",
+    "guidance_scale": 1.0,
+    "local_files_only": false
+  },
+  "policy": {
+    "kind": "openvla",
+    "checkpoint": "openvla/openvla-7b-finetuned-libero-spatial",
+    "cache_dir": "${HF_HOME}/hub",
+    "revision": "962318cec55ac10993ff0f5f43eda9a270b4c873",
+    "code_revision": "47a0ec7fc4ec123775a391911046cf33cf9ed83f",
+    "unnorm_key": "libero_spatial",
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "local_files_only": false,
+    "trust_remote_code": true,
+    "center_crop_area": 0.9
+  },
+  "objective": {
+    "target": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "weights": [
+      1,
+      1,
+      1,
+      0.5,
+      0.5,
+      0.5,
+      0.2
+    ],
+    "dimensions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "naturalness": {
+    "step_sizes": [
+      0.75,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "limits": {
+      "patch_rgb_rmse_max": 0.075,
+      "patch_tv_max": 0.05,
+      "boundary_increase_max": 6.25,
+      "local_ssim_drop_max": 0.0125
+    },
+    "fixed_limits": false,
+    "scene_reference_patch": "${DURA_SCRATCH}/data/libero_spatial/seed.png",
+    "constraint_profile": "relaxed_v2"
+  }
+}

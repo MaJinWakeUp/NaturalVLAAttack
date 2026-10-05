@@ -1,0 +1,148 @@
+{
+  "name": "spatial_task_06",
+  "suite": "libero_spatial",
+  "task_ids": [
+    6
+  ],
+  "instruction": "pick up the black bowl next to the cookie box and place it on the plate",
+  "trials_per_task": 5,
+  "initial_state_offset": 22,
+  "patch": "patch.png",
+  "patch_sha256": "081e48e183d35b5ad196e4aa39842cd1a0eb57559565eda0661b1c752b31ccbc",
+  "seed": "../../../seed_patches/cat_01_soft.png",
+  "seed_sha256": "1dd315458e1898bc7bfefe3108879ab4a24367caf0f46c4e8dcf40e9700e6c96",
+  "comparison": {
+    "paired_rollouts_per_condition": 5,
+    "conditions": {
+      "clean": {
+        "rollouts": 5,
+        "asr": 0.4,
+        "ap": 0.012545454545454545,
+        "per_rollout_ap": [
+          0.0,
+          0.04,
+          0.022727272727272728,
+          0.0,
+          0.0
+        ]
+      },
+      "seed": {
+        "rollouts": 5,
+        "asr": 0.2,
+        "ap": 0.0036363636363636364,
+        "per_rollout_ap": [
+          0.0,
+          0.01818181818181818,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "adversarial": {
+        "rollouts": 5,
+        "asr": 0.4,
+        "ap": 0.006760942760942761,
+        "per_rollout_ap": [
+          0.0,
+          0.02,
+          0.004545454545454545,
+          0.0,
+          0.009259259259259259
+        ]
+      }
+    },
+    "adversarial_failure_rate_minus_clean": 0.0,
+    "adversarial_failure_rate_minus_seed": 0.2,
+    "conditional_on_clean_success": {
+      "reference_successes": 3,
+      "adversarial_failures": 1,
+      "rate": 0.3333333333333333,
+      "failed_pairs": [
+        [
+          "libero_spatial",
+          6,
+          25
+        ]
+      ]
+    },
+    "conditional_on_both_baselines_succeeding": {
+      "reference_successes": 2,
+      "adversarial_failures": 1,
+      "rate": 0.5,
+      "failed_pairs": [
+        [
+          "libero_spatial",
+          6,
+          25
+        ]
+      ]
+    },
+    "target": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "tolerance": [
+      0.05
+    ],
+    "dimensions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "initial_observations_match": true,
+    "paired_successes": [
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "trial": 22,
+        "clean": true,
+        "seed": true,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "trial": 23,
+        "clean": true,
+        "seed": false,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "trial": 24,
+        "clean": false,
+        "seed": true,
+        "adversarial": false
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "trial": 25,
+        "clean": true,
+        "seed": true,
+        "adversarial": false
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "trial": 26,
+        "clean": false,
+        "seed": true,
+        "adversarial": true
+      }
+    ]
+  },
+  "training_report": "report.json",
+  "initial_observation_matching": "Exact pre-action image SHA-256 agreement across all three conditions; first matching guarded rerun, independent of outcome.",
+  "training_scope": "one exact Spatial instruction"
+}

@@ -1,0 +1,78 @@
+{
+  "review_type": "model-assisted visual inspection of a montage; numerical gates remain the reproducible acceptance rule",
+  "reviewed_files": [
+    "goal_suite/patch.png",
+    "long_suite/patch.png",
+    "object_suite/patch.png",
+    "spatial_suite/patch.png",
+    "spatial_task_00/patch.png",
+    "spatial_task_01/patch.png",
+    "spatial_task_02/patch.png",
+    "spatial_task_03/patch.png",
+    "spatial_task_04/patch.png",
+    "spatial_task_05/patch.png",
+    "spatial_task_06/patch.png",
+    "spatial_task_07/patch.png",
+    "spatial_task_08/patch.png",
+    "spatial_task_09/patch.png"
+  ],
+  "overall": "All selected patches remain recognizable as natural cat photographs. Spatial task 02 and Long show minor background artifacts but retain the intended animal appearance.",
+  "per_patch": {
+    "spatial_task_00": {
+      "appearance_review": "pass",
+      "note": "clear cat subject; soft photographic background; no obvious non-image pattern"
+    },
+    "spatial_task_01": {
+      "appearance_review": "pass",
+      "note": "clear cat subject; soft photographic background; no obvious non-image pattern"
+    },
+    "spatial_task_02": {
+      "appearance_review": "pass",
+      "note": "clear cat subject; soft photographic background; a few small dark background marks remain visible"
+    },
+    "spatial_task_03": {
+      "appearance_review": "pass",
+      "note": "clear cat subject; soft photographic background; no obvious non-image pattern"
+    },
+    "spatial_task_04": {
+      "appearance_review": "pass",
+      "note": "clear cat subject; soft photographic background; no obvious non-image pattern"
+    },
+    "spatial_task_05": {
+      "appearance_review": "pass",
+      "note": "clear cat subject; soft photographic background; no obvious non-image pattern"
+    },
+    "spatial_task_06": {
+      "appearance_review": "pass",
+      "note": "clear cat subject; soft photographic background; no obvious non-image pattern"
+    },
+    "spatial_task_07": {
+      "appearance_review": "pass",
+      "note": "clear cat subject; soft photographic background; no obvious non-image pattern"
+    },
+    "spatial_task_08": {
+      "appearance_review": "pass",
+      "note": "clear cat subject; soft photographic background; no obvious non-image pattern"
+    },
+    "spatial_task_09": {
+      "appearance_review": "pass",
+      "note": "clear cat subject; soft photographic background; no obvious non-image pattern"
+    },
+    "object_suite": {
+      "appearance_review": "pass",
+      "note": "clear cat subject; soft photographic background; no obvious non-image pattern"
+    },
+    "goal_suite": {
+      "appearance_review": "pass",
+      "note": "clear cat subject; soft photographic background; no obvious non-image pattern"
+    },
+    "long_suite": {
+      "appearance_review": "pass",
+      "note": "clear cat subject; soft photographic background; localized background distortion remains visible at upper right"
+    },
+    "spatial_suite": {
+      "appearance_review": "pass",
+      "note": "Previously selected relaxed cat patch; clear recognizable cat photograph."
+    }
+  }
+}

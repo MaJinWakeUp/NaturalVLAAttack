@@ -1,0 +1,31 @@
+{
+  "method": "Algorithm 1 trajectories followed by additional appearance-gated candidate selection",
+  "paper_settings": {
+    "anchor_weight": 0.2,
+    "ddim_steps": 200,
+    "strength": 0.5
+  },
+  "additional_choices": [
+    "step-size search",
+    "appearance acceptance thresholds",
+    "validation candidate selection"
+  ],
+  "code_sha256": {
+    "dura/attack.py": "06625ac1d769649123c394c6a2fd8a92a8ece7ddc76cc7da060fecfecf4a3d05",
+    "dura/diffusion.py": "6d49c0cc53258479b754c1fda421de1d8d298192021b2ca808af8c42f7f08be1",
+    "dura/naturalness.py": "91c0a4364dee3431a14fb2d08d7043f8054d542c969d1da34c45df82ede0f498",
+    "dura/natural_train.py": "0f298817ebe25554ee288328834c3fa5ce0555dfd799c438746de3ca336975f7"
+  },
+  "versions": {
+    "torch": "2.2.2+cu121",
+    "torchvision": "0.17.2+cu121",
+    "diffusers": "0.30.3",
+    "transformers": "4.40.1",
+    "numpy": "1.26.4"
+  },
+  "seed_sha256": "1dd315458e1898bc7bfefe3108879ab4a24367caf0f46c4e8dcf40e9700e6c96",
+  "scene_reference": {
+    "path": "${DURA_SCRATCH}/data/libero_10/seed.png",
+    "sha256": "450c8d6573ffa29e2947c25c5284d9a224bd481f42f0290f6a39be19d99f5536"
+  }
+}

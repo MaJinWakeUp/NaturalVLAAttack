@@ -1,0 +1,133 @@
+{
+  "status": "appearance_gate_passed; visual and closed-loop reviews completed",
+  "method": "Algorithm 1 trajectories followed by additional appearance-gated candidate selection",
+  "selection_data_role": "tuning, not independent ASR validation",
+  "selection_rule": "Appearance gate first, then lowest validation decoded-action MSE, then CE.",
+  "selected_candidate": 2,
+  "selected_step_size": 1.5,
+  "candidates": [
+    {
+      "id": 0,
+      "step_size": 0.75,
+      "action_score": {
+        "frames": 16,
+        "target_ce": 54.86554279923439,
+        "target_weighted_mse": 0.746151732513681
+      },
+      "appearance": {
+        "gate": {
+          "accepted": true,
+          "violations": {},
+          "limits": {
+            "patch_rgb_rmse_max": 0.075,
+            "patch_tv_max": 0.05,
+            "boundary_increase_max": 6.25,
+            "local_ssim_drop_max": 0.0125
+          },
+          "interpretation": "Additional measurable safeguards, not paper thresholds or a realism guarantee"
+        },
+        "gate_metrics": {
+          "patch_rgb_rmse_max": 0.04974566027522087,
+          "patch_tv_max": 0.034202221781015396,
+          "boundary_increase_max": 0.8236713409423828,
+          "local_ssim_drop_max": 0.0046100616455078125
+        }
+      }
+    },
+    {
+      "id": 1,
+      "step_size": 1.0,
+      "action_score": {
+        "frames": 16,
+        "target_ce": 47.678726986050606,
+        "target_weighted_mse": 0.7185640428215265
+      },
+      "appearance": {
+        "gate": {
+          "accepted": true,
+          "violations": {},
+          "limits": {
+            "patch_rgb_rmse_max": 0.075,
+            "patch_tv_max": 0.05,
+            "boundary_increase_max": 6.25,
+            "local_ssim_drop_max": 0.0125
+          },
+          "interpretation": "Additional measurable safeguards, not paper thresholds or a realism guarantee"
+        },
+        "gate_metrics": {
+          "patch_rgb_rmse_max": 0.05630688741803169,
+          "patch_tv_max": 0.04015996307134628,
+          "boundary_increase_max": 1.1905384063720703,
+          "local_ssim_drop_max": 0.007131218910217285
+        }
+      }
+    },
+    {
+      "id": 2,
+      "step_size": 1.5,
+      "action_score": {
+        "frames": 16,
+        "target_ce": 44.0722129791975,
+        "target_weighted_mse": 0.717279595322907
+      },
+      "appearance": {
+        "gate": {
+          "accepted": true,
+          "violations": {},
+          "limits": {
+            "patch_rgb_rmse_max": 0.075,
+            "patch_tv_max": 0.05,
+            "boundary_increase_max": 6.25,
+            "local_ssim_drop_max": 0.0125
+          },
+          "interpretation": "Additional measurable safeguards, not paper thresholds or a realism guarantee"
+        },
+        "gate_metrics": {
+          "patch_rgb_rmse_max": 0.06682239472866058,
+          "patch_tv_max": 0.049584053456783295,
+          "boundary_increase_max": 1.5557031631469727,
+          "local_ssim_drop_max": 0.01044464111328125
+        }
+      }
+    },
+    {
+      "id": 3,
+      "step_size": 2.0,
+      "action_score": null,
+      "appearance": {
+        "gate": {
+          "accepted": false,
+          "violations": {
+            "patch_rgb_rmse_max": {
+              "value": 0.08445457369089127,
+              "maximum": 0.075
+            },
+            "patch_tv_max": {
+              "value": 0.06490368396043777,
+              "maximum": 0.05
+            },
+            "local_ssim_drop_max": {
+              "value": 0.016563892364501953,
+              "maximum": 0.0125
+            }
+          },
+          "limits": {
+            "patch_rgb_rmse_max": 0.075,
+            "patch_tv_max": 0.05,
+            "boundary_increase_max": 6.25,
+            "local_ssim_drop_max": 0.0125
+          },
+          "interpretation": "Additional measurable safeguards, not paper thresholds or a realism guarantee"
+        },
+        "gate_metrics": {
+          "patch_rgb_rmse_max": 0.08445457369089127,
+          "patch_tv_max": 0.06490368396043777,
+          "boundary_increase_max": 2.2596817016601562,
+          "local_ssim_drop_max": 0.016563892364501953
+        }
+      }
+    }
+  ],
+  "visual_review": "../visual_review.json",
+  "reference_policy": "Acceptance uses the current seed; optional original-scene comparison is diagnostic only."
+}

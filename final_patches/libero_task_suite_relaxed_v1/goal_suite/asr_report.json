@@ -1,0 +1,212 @@
+{
+  "name": "goal_suite",
+  "suite": "libero_goal",
+  "task_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "instruction": null,
+  "trials_per_task": 1,
+  "initial_state_offset": 22,
+  "patch": "patch.png",
+  "patch_sha256": "e9832d8acf56f54af1443212072780b802d3af2ded1e40d1797e0a1f7f8b976b",
+  "seed": "../../../seed_patches/cat_01_soft.png",
+  "seed_sha256": "1dd315458e1898bc7bfefe3108879ab4a24367caf0f46c4e8dcf40e9700e6c96",
+  "comparison": {
+    "paired_rollouts_per_condition": 10,
+    "conditions": {
+      "clean": {
+        "rollouts": 10,
+        "asr": 0.5,
+        "ap": 0.005298383573612932,
+        "per_rollout_ap": [
+          0.0,
+          0.023809523809523808,
+          0.0,
+          0.0,
+          0.009174311926605505,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.02
+        ]
+      },
+      "seed": {
+        "rollouts": 10,
+        "asr": 0.4,
+        "ap": 0.002666666666666667,
+        "per_rollout_ap": [
+          0.0,
+          0.0,
+          0.0,
+          0.01,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.013333333333333334,
+          0.0033333333333333335
+        ]
+      },
+      "adversarial": {
+        "rollouts": 10,
+        "asr": 0.4,
+        "ap": 0.004333117023577764,
+        "per_rollout_ap": [
+          0.0,
+          0.021739130434782608,
+          0.0,
+          0.014925373134328358,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.006666666666666667
+        ]
+      }
+    },
+    "adversarial_failure_rate_minus_clean": -0.09999999999999998,
+    "adversarial_failure_rate_minus_seed": 0.0,
+    "conditional_on_clean_success": {
+      "reference_successes": 5,
+      "adversarial_failures": 1,
+      "rate": 0.2,
+      "failed_pairs": [
+        [
+          "libero_goal",
+          4,
+          22
+        ]
+      ]
+    },
+    "conditional_on_both_baselines_succeeding": {
+      "reference_successes": 5,
+      "adversarial_failures": 1,
+      "rate": 0.2,
+      "failed_pairs": [
+        [
+          "libero_goal",
+          4,
+          22
+        ]
+      ]
+    },
+    "target": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "tolerance": [
+      0.05
+    ],
+    "dimensions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "initial_observations_match": true,
+    "paired_successes": [
+      {
+        "suite": "libero_goal",
+        "task_id": 0,
+        "trial": 22,
+        "clean": true,
+        "seed": true,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 1,
+        "trial": 22,
+        "clean": true,
+        "seed": true,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 2,
+        "trial": 22,
+        "clean": false,
+        "seed": false,
+        "adversarial": false
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 3,
+        "trial": 22,
+        "clean": false,
+        "seed": false,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 4,
+        "trial": 22,
+        "clean": true,
+        "seed": true,
+        "adversarial": false
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 5,
+        "trial": 22,
+        "clean": true,
+        "seed": true,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 6,
+        "trial": 22,
+        "clean": false,
+        "seed": false,
+        "adversarial": false
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 7,
+        "trial": 22,
+        "clean": true,
+        "seed": true,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 8,
+        "trial": 22,
+        "clean": false,
+        "seed": true,
+        "adversarial": true
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 9,
+        "trial": 22,
+        "clean": false,
+        "seed": false,
+        "adversarial": false
+      }
+    ]
+  },
+  "training_report": "report.json",
+  "initial_observation_matching": "Exact pre-action image SHA-256 agreement across all three conditions; first matching guarded rerun, independent of outcome.",
+  "training_scope": "all ten suite tasks"
+}

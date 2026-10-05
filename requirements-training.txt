@@ -1,0 +1,15 @@
+# Install matching CUDA torch/torchvision wheels first (see scripts/setup_env.sh).
+numpy==1.26.4
+torch==2.2.2
+torchvision==0.17.2
+transformers==4.40.1
+diffusers==0.30.3
+accelerate==0.34.2
+timm==0.9.10
+huggingface-hub==0.25.2
+sentencepiece==0.2.0
+Pillow>=10,<12
+PyYAML>=6,<7
+tensorflow-cpu==2.15.0
+tensorflow-datasets==4.9.3
+tensorflow-metadata==1.15.0
