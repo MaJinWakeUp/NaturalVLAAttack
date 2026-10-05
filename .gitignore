@@ -1,0 +1,33 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# Runtime files belong in scratch, outside this checkout.
+data/
+datasets/
+outputs/
+runs/
+cache/
+checkpoints/
+logs/
+*.log
+*.jsonl
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.mp4
+*.tar
+*.tar.gz
+.env
+.env.*
+
+# Keep the published final PNGs and compact reports; new runs are opt-in.
+final_patches/*
+!final_patches/libero_task_suite_relaxed_v1/
