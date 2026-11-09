@@ -1,5 +1,6 @@
 """Checks of scratch configuration and held-out sample selection."""
 import tempfile
+import json
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
@@ -11,6 +12,13 @@ from dura.validate_patch import balanced_indices
 
 
 class WorkflowTests(unittest.TestCase):
+    def test_json_config_keeps_scientific_notation_numeric(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/'config.json'
+            path.write_text(json.dumps({'tolerance':1e-8,'policy':{},'diffusion':{}}))
+            self.assertEqual(read_config(path)['tolerance'],1e-8)
+            self.assertIsInstance(read_config(path)['tolerance'],float)
+
     def test_optional_paths_are_resolved_relative_to_config(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

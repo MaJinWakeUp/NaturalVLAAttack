@@ -167,6 +167,14 @@ This reads the included PNGs and writes the new ASR reports and result table und
 
 [Protocol details](docs/libero_task_suite_experiments.md) explain selection, action coordinates, and report files. Final per-patch `config.json` files use environment variables for scratch/cache paths and relative paths for the shared seed. They retain scientific settings and pinned model revisions; archived execution paths belong to the original run backup.
 
+[Object-texture pilot](docs/object_texture_pilot.md) implements an alphabet-soup label attack on LIBERO Object task 0: native texture rendering, full simulator-state collection, resumable diffusion optimization, appearance review, and paired ASR evaluation. The guide includes Slurm submission commands and the frozen experimental criteria. Use `scripts/submit_object_texture.py --submit` to queue training on a separate GPU allocation; held-out evaluation follows recorded visual review.
+
+[Full-surface follow-up](docs/full_surface_attack.md) removes the label-area, protected-text and naturalness limits. It optimizes the entire object atlas, compares simple whole-object texture controls, selects by actual validation failures, and automatically evaluates the winner on nine previously unused states. Submit with `scripts/submit_object_texture.py --config configs/object_texture_full_surface.yaml --stage full-run --time 08:00:00 --submit`. This profile reports original-conditioned ASR and also retains the both-controls-conditioned metric.
+
+[Benign-latent optimization](docs/benign_latent.md) starts from a completed neutral diffusion reconstruction and optimizes a small latent adjustment with the VAE frozen. It uses continuous action-token confidence, similarity bounds relative to the neutral texture, and validation task failures to select a candidate. The `latent-run` stage automatically evaluates on 20 newly sampled and frozen initializations after selection.
+
+[Prompt or saved-latent textures](docs/prompt_latent.md) creates copper and ceramic references from text-conditioned noise, independently of the original atlas. It also accepts checksum-pinned noise or clean VAE latents. The new configuration relaxes SSIM/RMSE bounds, permits larger latent changes, and selects before evaluating on 30 fresh paired initializations. Use `configs/object_texture_prompt_latent_v1.yaml` with the same `latent-run` stage.
+
 Run the CPU regression tests without downloading models:
 
 ```bash

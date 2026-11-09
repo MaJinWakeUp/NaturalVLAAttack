@@ -1,0 +1,65 @@
+base_config: libero_relaxed.yaml
+libero_root: ../../roboticAttack/LIBERO
+output: ${DURA_SCRATCH}/runs/object_texture_alphabet_soup_v1
+final_output: ../final_patches/object_texture_alphabet_soup_v1
+suite: libero_object
+task_id: 0
+task_order: 0
+task_name: pick_up_the_alphabet_soup_and_place_it_in_the_basket
+instance: alphabet_soup_1
+texture_relative: libero/libero/assets/stable_hope_objects/alphabet_soup/texture_map.png
+mesh_relative: libero/libero/assets/stable_hope_objects/alphabet_soup/visual/textured_vis.msh
+texture_sha256: cd47556b3b2916ae138e8fd370d4f5192a2fe100369eec254c3c173409f48674
+init_sha256: b9023e5546b239cacb2aaa3c76df3b73c3de6f97500fea5e27a0db9827002a19
+policy_override:
+  checkpoint: openvla/openvla-7b-finetuned-libero-object
+  revision: 287d6cfdf12d07b1449505f66d9bf3550257e9b3
+  unnorm_key: libero_object
+  local_files_only: true
+mapping:
+  # Coordinates in the original PNG, [left, top, right, bottom].
+  # Editable rectangle lies in plain blue artwork, clear of product lettering.
+  panel: [544, 1312, 1066, 2048]
+  editable: [620, 1380, 900, 1570]
+  feather: 16
+  working_size: 512
+  uv_origin: top
+  max_surface_fraction: 0.30
+splits:
+  train: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  calibration: [10, 11, 12, 13, 14]
+  validation: [15, 16, 17, 18, 19]
+  reserved: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+  test: [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49]
+collection:
+  frames_per_episode: 8
+  min_object_pixels: 100
+  camera: agentview
+  camera_size: 256
+  image_size: 224
+  settle_steps: 10
+  horizon: 280
+  seed: 0
+search:
+  step_sizes: [0.75, 1.5]
+  seeds: [0, 1, 2]
+  batch_size: 4
+  samples: 32
+  baseline: leave_one_out
+  query_alpha: step
+  checkpoint_every: 1
+appearance:
+  rmse_max: 0.075
+  ssim_min: 0.95
+  seam_relative_increase: 0.25
+  seam_absolute_slack: 0.00392156862745098
+  min_calibration_trajectories: 3
+  crop_border: 4
+  crop_size: 128
+acceptance:
+  baseline_validation_successes: 4
+  baseline_test_successes: 16
+  eligible_test_states: 16
+  conditional_asr: 0.5
+  failure_increase_over_benign: 0.2
+  physics_atol: 0.00000001

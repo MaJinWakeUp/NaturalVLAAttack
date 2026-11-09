@@ -1,6 +1,7 @@
 """Validated algorithm settings; unspecified paper choices remain configurable."""
 
 from dataclasses import dataclass
+import json
 import math
 import os
 from pathlib import Path
@@ -32,7 +33,8 @@ def expand_path(value, base):
 def read_config(path):
     """Read YAML/JSON and resolve storage paths relative to the config file."""
     path = Path(path).resolve()
-    config = yaml.safe_load(path.read_text())
+    text = path.read_text()
+    config = json.loads(text) if path.suffix.lower() == '.json' else yaml.safe_load(text)
     for name in ("manifest", "validation_manifest", "seed_patch", "output", "final_output"):
         if config.get(name):
             config[name] = expand_path(config[name], path.parent)
